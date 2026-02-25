@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.SVGPath?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1000.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.rentalhouse.app.views.containers.Dashboard.DashboardScene">
+
+   <left>
+      <BorderPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="300.0" style="-fx-background-color: linear-gradient(#383698, #0A0E47);" BorderPane.alignment="CENTER">
+         <right>
+            <AnchorPane prefHeight="960.0" prefWidth="20.0" style="-fx-background-color: #f4f4f4; -fx-background-radius: 20 0 0 20;" BorderPane.alignment="CENTER" />
+         </right>
+         <center>
+            <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <center>
+                  <VBox prefHeight="526.0" prefWidth="280.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <VBox alignment="CENTER" prefHeight="0.0" prefWidth="240.0">
+                           <children>
+                              <ImageView fitHeight="40.0" fitWidth="140.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../assets/images/logo-rentify.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="378.0" prefWidth="240.0" spacing="10.0">
+                           <VBox.margin>
+                              <Insets top="40.0" />
+                           </VBox.margin>
+                           <children>
+                              <AnchorPane fx:id="rentalBtn" prefHeight="70.0" prefWidth="220.0" style="-fx-cursor: hand;">
+                                 <children>
+                                    <Pane fx:id="rentalIconPane" layoutY="16.0" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: white; -fx-background-radius: 10;">
+                                       <children>
+                                          <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../assets/icons/gauge-high-solid.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </Pane>
+                                    <Label fx:id="rentalLabel" layoutX="56.0" layoutY="9.0" prefHeight="54.0" prefWidth="150.0" text="Rental Management" textFill="WHITE" wrapText="true">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane fx:id="revenueBtn" prefHeight="70.0" prefWidth="220.0" style="-fx-cursor: hand;">
+                                 <children>
+                                    <Pane fx:id="revenueIconPane" layoutY="13.0" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #8285FF; -fx-background-radius: 10;">
+                                       <children>
+                                          <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="10.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../assets/icons/chart-line-solid.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </Pane>
+                                    <Label fx:id="revenueLabel" layoutX="56.0" layoutY="7.0" prefHeight="54.0" prefWidth="150.0" text="Revenue Management" textFill="#8285ff" wrapText="true">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                              <Pane prefHeight="5.0" prefWidth="220.0" style="-fx-background-color: white; -fx-background-radius: 50;" />
+                              <AnchorPane fx:id="createInfrastructureBtn" prefHeight="0.0" prefWidth="240.0" style="-fx-cursor: hand;">
+                                 <children>
+                                    <Pane fx:id="createInfrastructureIconPane" layoutY="13.0" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #8285FF; -fx-background-radius: 10;">
+                                       <children>
+                                          <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../assets/icons/circle-plus-solid.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </Pane>
+                                    <Label fx:id="createInfrastructureLabel" layoutX="56.0" layoutY="7.0" prefHeight="54.0" prefWidth="150.0" text="Create a Infrastructure" textFill="#8285ff" wrapText="true">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </VBox>
+                     </children>
+                     <BorderPane.margin>
+                        <Insets />
+                     </BorderPane.margin>
+                     <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </padding>
+                  </VBox>
+               </center>
+               <bottom>
+                  <VBox alignment="CENTER" prefHeight="180.0" prefWidth="280.0" spacing="10.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane fx:id="contactBtn" prefHeight="52.0" prefWidth="240.0" style="-fx-cursor: hand;">
+                           <children>
+                              <Pane fx:id="contactIconPane" layoutY="13.0" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #8285FF; -fx-background-radius: 10;">
+                                 <children>
+                                    <SVGPath content="M12.6211 5.625H8.4375H6.31641H5.625V6.14062V8.4375V10.8047V16.0195L0.0117188 11.8652C0.105469 10.8047 0.650391 9.82031 1.51758 9.18164L2.8125 8.2207V5.625C2.8125 4.07227 4.07227 2.8125 5.625 2.8125H10.1133L13.0371 0.650391C13.6055 0.228516 14.291 0 15 0C15.709 0 16.3945 0.228516 16.9629 0.644531L19.8867 2.8125H24.375C25.9277 2.8125 27.1875 4.07227 27.1875 5.625V8.2207L28.4824 9.18164C29.3496 9.82031 29.8945 10.8047 29.9883 11.8652L24.375 16.0195V10.8047V8.4375V6.14062V5.625H23.6836H21.5625H17.3789H12.6211ZM0 26.25V14.1855L12.75 23.6309C13.4004 24.1113 14.1914 24.375 15 24.375C15.8086 24.375 16.5996 24.1172 17.25 23.6309L30 14.1855V26.25C30 28.3184 28.3184 30 26.25 30H3.75C1.68164 30 0 28.3184 0 26.25ZM10.3125 9.375H19.6875C20.2031 9.375 20.625 9.79688 20.625 10.3125C20.625 10.8281 20.2031 11.25 19.6875 11.25H10.3125C9.79688 11.25 9.375 10.8281 9.375 10.3125C9.375 9.79688 9.79688 9.375 10.3125 9.375ZM10.3125 13.125H19.6875C20.2031 13.125 20.625 13.5469 20.625 14.0625C20.625 14.5781 20.2031 15 19.6875 15H10.3125C9.79688 15 9.375 14.5781 9.375 14.0625C9.375 13.5469 9.79688 13.125 10.3125 13.125Z" fill="#3c3c97" layoutX="5.0" layoutY="5.0" scaleX="0.7" scaleY="0.7" />
+                                 </children>
+                              </Pane>
+                              <Label fx:id="contactLabel" layoutX="56.0" layoutY="7.0" prefHeight="54.0" prefWidth="150.0" text="Contact support" textFill="#8285ff" wrapText="true">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <Pane prefHeight="5.0" prefWidth="220.0" style="-fx-background-color: white; -fx-background-radius: 50;" />
+                        <AnchorPane fx:id="logOutBtn" prefHeight="60.0" prefWidth="220.0" style="-fx-background-color: transparent; -fx-cursor: hand;">
+                           <children>
+                              <Pane layoutY="10.0" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: linear-gradient(to right, #ff8282, #D49797); -fx-background-radius: 10;">
+                                 <children>
+                                    <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="10.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../assets/icons/right-from-bracket-solid.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </Pane>
+                              <Label layoutX="56.0" layoutY="18.0" text="Logout" textFill="#fd6f6f">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                     <padding>
+                        <Insets left="20.0" right="20.0" />
+                     </padding>
+                  </VBox>
+               </bottom>
+            </BorderPane>
+         </center>
+      </BorderPane>
+   </left>
+   <center>
+      <BorderPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #f4f4f4;" BorderPane.alignment="CENTER">
+         <center>
+            <StackPane fx:id="stackPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+         </center>
+         <top>
+            <BorderPane prefHeight="80.0" prefWidth="1140.0" BorderPane.alignment="CENTER">
+               <padding>
+                  <Insets bottom="10.0" right="20.0" top="10.0" />
+               </padding>
+               <center>
+                  <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="535.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label fx:id="titleSceneLabel" text="Rental management" textFill="#373596">
+                           <font>
+                              <Font name="System Bold" size="28.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+               </center>
+               <right>
+                  <AnchorPane fx:id="userProfile" prefHeight="60.0" prefWidth="33.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Circle fill="#3a389b" layoutX="182.0" layoutY="30.0" radius="20.0" stroke="#3a389b" strokeType="INSIDE" />
+                        <SVGPath content="M12.5 14.2857C14.3944 14.2857 16.2112 13.5332 17.5508 12.1936C18.8903 10.8541 19.6429 9.03726 19.6429 7.14286C19.6429 5.24845 18.8903 3.43164 17.5508 2.09209C16.2112 0.752549 14.3944 0 12.5 0C10.6056 0 8.78878 0.752549 7.44924 2.09209C6.10969 3.43164 5.35714 5.24845 5.35714 7.14286C5.35714 9.03726 6.10969 10.8541 7.44924 12.1936C8.78878 13.5332 10.6056 14.2857 12.5 14.2857ZM9.94978 16.9643C4.45312 16.9643 0 21.4174 0 26.9141C0 27.8292 0.742188 28.5714 1.65737 28.5714H23.3426C24.2578 28.5714 25 27.8292 25 26.9141C25 21.4174 20.5469 16.9643 15.0502 16.9643H9.94978Z" fill="WHITE" layoutX="170.0" layoutY="16.0" scaleX="0.7" scaleY="0.7" />
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </AnchorPane>
+               </right>
+            </BorderPane>
+         </top>
+      </BorderPane>
+   </center>
+   <top>
+      <BorderPane prefHeight="35.0" prefWidth="1440.0" style="-fx-background-color: #2c2c83;" BorderPane.alignment="CENTER">
+         <left>
+            <Label text="Rentify" textFill="WHITE" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+         </left>
+         <padding>
+            <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+         </padding>
+      </BorderPane>
+   </top>
+</BorderPane>

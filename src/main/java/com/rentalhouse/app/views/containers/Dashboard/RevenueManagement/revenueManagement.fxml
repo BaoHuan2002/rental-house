@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="685.0" prefWidth="900.0"
+   xmlns="http://javafx.com/javafx/21"
+   xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.rentalhouse.app.views.containers.Dashboard.RevenueManagement.RevenueManagementScene">
+   <children>
+      <AnchorPane prefHeight="685.0" prefWidth="900.0" style="-fx-background-color: transparent;">
+         <StackPane.margin>
+            <Insets />
+         </StackPane.margin>
+         <children>
+            <Label fx:id="revenueForm_yearLabel" layoutX="14.0" layoutY="99.0" text="# Year :" textFill="#000f94" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="125.0">
+               <font>
+                  <Font name="Tahoma Bold" size="30.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="revenue_comboBoxYear" layoutX="17.0" layoutY="32.0" prefHeight="30.0" prefWidth="250.0" promptText="Select Year" stylesheets="@style.css" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="30.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ComboBox>
+            <Label fx:id="revenueForm_selectYearLabel" layoutX="14.0" layoutY="30.0" text="Select year :" textFill="#ff0000cf" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="35.0">
+               <font>
+                  <Font name="Tahoma Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="revenueForm_totalPrice" layoutX="153.0" layoutY="125.0" text="\$ - -" textFill="#ff1800" AnchorPane.leftAnchor="140.0" AnchorPane.topAnchor="125.0">
+               <font>
+                  <Font name="Tahoma Bold" size="30.0" />
+               </font>
+            </Label>
+            <TextField fx:id="revenue_search" layoutX="740.0" layoutY="132.0" prefHeight="40.0" prefWidth="350.0" promptText="Search price, infras name . . ." styleClass="search" stylesheets="@style.css" visible="false" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="27.0">
+               <padding>
+                  <Insets left="10.0" right="35.0" />
+               </padding>
+            </TextField>
+            <FontAwesomeIcon fx:id="font_search" fill="#a4a4a4" glyphName="SEARCH" layoutX="856.0" layoutY="157.0" size="1.3EM" visible="false" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="39.0" />
+            <Button fx:id="invoiceMonth_back" layoutX="540.0" layoutY="67.0" mnemonicParsing="false" onAction="#back" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: linear-gradient(to bottom right, #ff5100, #ff0000);; -fx-background-radius: 10;" text="Back" textFill="WHITE" visible="false" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="30.0">
+               <font>
+                  <Font name="Tahoma Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Label fx:id="revenueForm_monthYear" layoutX="5.0" layoutY="125.0" prefHeight="38.0" prefWidth="167.0" text="Date" textFill="#000f94" visible="false" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="80.0">
+               <font>
+                  <Font name="Tahoma Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="revenueForm_revenueMonth" layoutX="150.0" layoutY="135.0" text="\$ - -" textFill="#ff1800" visible="false" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="80.0">
+               <font>
+                  <Font name="Tahoma Bold" size="30.0" />
+               </font>
+            </Label>
+            <FontAwesomeIcon fx:id="changeView_table" fill="#0f2794" glyphName="TABLE" layoutX="858.0" layoutY="103.0" onMouseClicked="#changeView" size="1.5EM" visible="false" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="100.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </FontAwesomeIcon>
+            <FontAwesomeIcon fx:id="changeView_list" fill="#0f2794" glyphName="LIST" layoutX="833.0" layoutY="115.0" onMouseClicked="#changeView" size="1.5EM" visible="false" AnchorPane.rightAnchor="45.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </FontAwesomeIcon>
+            <VBox fx:id="vBox_cardMonth" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="165.0">
+               <children>
+                  <FlowPane fx:id="flowPane_cardMonth" prefHeight="520.0" prefWidth="879.0" />
+               </children>
+               <padding>
+                  <Insets left="20.0" top="20.0" />
+               </padding>
+            </VBox>
+            <ScrollPane fx:id="revenue_scrollPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="520.0" prefWidth="900.0" style="-fx-background-color: transparent;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="165.0">
+               <content>
+                  <GridPane fx:id="gridPane_motelCard" prefHeight="0.0" prefWidth="0.0">
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                  </GridPane>
+               </content>
+            </ScrollPane>
+            <AnchorPane fx:id="anchorpane_containInvoices" layoutY="125.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="520.0" prefWidth="880.0" style="-fx-background-color: transparent;" visible="false" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="125.0">
+               <children>
+                  <ScrollPane fx:id="revenue_showInvoices" layoutX="14.0" layoutY="14.0" prefHeight="505.0" prefWidth="900.0" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <content>
+                        <GridPane fx:id="gridPane_invoices" prefHeight="0.0" prefWidth="0.0" style="-fx-background-color: transparent;">
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                     </content>
+                  </ScrollPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="anchorpane_tableViewInvoices" layoutX="10.0" layoutY="135.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="520.0" prefWidth="880.0" style="-fx-background-color: transparent;" visible="false" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="135.0">
+               <children>
+                  <TableView fx:id="revenue_tableView" layoutY="8.0" prefHeight="520.0" prefWidth="880.0" style="-fx-background-color: transparent;" stylesheets="@style.css" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <columns>
+                        <TableColumn fx:id="revenue_col_infrasName" prefWidth="120.0" style="-fx-border-width: 0.4;" text="InfrasName" />
+                        <TableColumn fx:id="revenue_col_listedPrice" prefWidth="120.0" style="-fx-border-width: 0.4;" text="Listed Price (USD)" />
+                        <TableColumn fx:id="revenue_col_electricity" prefWidth="300.0" style="-fx-border-width: 0 0.2 0 0; -fx-border-color: #fff;" text="Electricity (Kw /h)">
+                           <columns>
+                              <TableColumn fx:id="revenue_col_Electric_oldNumber" prefWidth="90.0" text="Old Number " />
+                              <TableColumn fx:id="revenue_col_Electric_newNumber" prefWidth="90.0" text="New Number" />
+                              <TableColumn fx:id="revenue_col_Electric_usedTotalNumber" prefWidth="90.0" text="Used Total " />
+                              <TableColumn fx:id="revenue_col_Electric_priceTotalUsed" prefWidth="90.0" text="Price total " />
+                           </columns>
+                        </TableColumn>
+                        <TableColumn fx:id="revenue_col_Water" prefWidth="300.0" text="Water (m3/ Day)">
+                           <columns>
+                              <TableColumn fx:id="revenue_col_Water_oldNumber" prefWidth="90.0" text="Old Number " />
+                              <TableColumn fx:id="revenue_col_Water_newNumber" prefWidth="90.0" text="New Number" />
+                              <TableColumn fx:id="revenue_col_Water_usedTotalNumber" prefWidth="90.0" text="Used Total" />
+                              <TableColumn fx:id="revenue_col_Water_priceTotal" prefWidth="90.0" text="Price total Used" />
+                           </columns>
+                        </TableColumn>
+                        <TableColumn fx:id="revenue_col_totalPrice" prefWidth="100.0" style="-fx-border-width: 0.4;" text="Total Price" />
+                        <TableColumn fx:id="revenue_col_date" prefWidth="100.0" style="-fx-border-width: 0.4;" text="Date" />
+                     </columns>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </TableView>
+               </children>
+            </AnchorPane>
+            <Label fx:id="revenueForm_notice" layoutX="830.0" layoutY="134.0" prefHeight="20.0" prefWidth="50.0" style="-fx-background-color: linear-gradient(to bottom right, #1f6b08, rgb(74, 202, 23)); -fx-border-width: 1; -fx-border-color: green; -fx-background-radius: 5; -fx-border-radius: 5;" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="40.0" />
+            <Label fx:id="revenueForm_textNotice" layoutX="150.0" layoutY="135.0" prefHeight="30.0" prefWidth="138.0" text="Hightest Revenue :" textFill="#ff3300" AnchorPane.rightAnchor="90.0" AnchorPane.topAnchor="35.0">
+               <font>
+                  <Font name="Tahoma Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

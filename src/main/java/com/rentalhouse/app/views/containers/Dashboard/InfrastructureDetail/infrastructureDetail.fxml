@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.SVGPath?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="685.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.rentalhouse.app.views.containers.Dashboard.InfrastructureDetail.InfrastructureDetailScene">
+   <padding>
+      <Insets bottom="10.0" right="20.0" top="10.0" />
+   </padding>
+   <top>
+      <VBox prefHeight="478.0" prefWidth="880.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefHeight="506.0" prefWidth="880.0" spacing="20.0">
+               <children>
+                  <BorderPane prefHeight="30.0" prefWidth="880.0">
+                     <left>
+                        <AnchorPane fx:id="backBtn" prefHeight="30.0" prefWidth="160.0" style="-fx-background-color: #1e1e1e; -fx-background-radius: 10;" BorderPane.alignment="CENTER">
+                           <children>
+                              <Label layoutX="77.0" layoutY="5.0" text="Back" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <SVGPath content="M0.642578 15.9551C-0.211914 16.8096 -0.211914 18.1973 0.642578 19.0518L9.39258 27.8018C10.2471 28.6563 11.6348 28.6563 12.4893 27.8018C13.3438 26.9473 13.3438 25.5596 12.4893 24.7051L7.47168 19.6875H32.8125C34.0225 19.6875 35 18.71 35 17.5C35 16.29 34.0225 15.3125 32.8125 15.3125H7.47168L12.4893 10.2949C13.3438 9.44043 13.3438 8.05273 12.4893 7.19824C11.6348 6.34375 10.2471 6.34375 9.39258 7.19824L0.642578 15.9482V15.9551Z" fill="WHITE" layoutX="41.0" layoutY="-3.0" scaleX="0.5" scaleY="0.5" />
+                           </children>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </AnchorPane>
+                     </left>
+                     <right>
+                        <AnchorPane fx:id="editInfrastructureBtn" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #403da7; -fx-background-radius: 10;" BorderPane.alignment="CENTER">
+                           <children>
+                              <Label layoutX="53.0" layoutY="5.0" text="Edit infrastructure" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <SVGPath content="M21.1852 0.974811C20.2014 -0.00897829 18.6111 -0.00897829 17.6273 0.974811L16.2752 2.32247L20.673 6.72032L22.0252 5.36817C23.009 4.38438 23.009 2.79415 22.0252 1.81036L21.1852 0.974811ZM7.74453 10.8576C7.47051 11.1316 7.25937 11.4686 7.13809 11.8414L5.8084 15.8305C5.67812 16.2168 5.78145 16.6436 6.06895 16.9356C6.35645 17.2275 6.7832 17.3264 7.17402 17.1961L11.1631 15.8664C11.5314 15.7451 11.8684 15.534 12.1469 15.26L19.6623 7.74005L15.26 3.3377L7.74453 10.8576ZM4.3125 2.87501C1.93164 2.87501 0 4.80665 0 7.18751V18.6875C0 21.0684 1.93164 23 4.3125 23H15.8125C18.1934 23 20.125 21.0684 20.125 18.6875V14.375C20.125 13.5799 19.4826 12.9375 18.6875 12.9375C17.8924 12.9375 17.25 13.5799 17.25 14.375V18.6875C17.25 19.4826 16.6076 20.125 15.8125 20.125H4.3125C3.51738 20.125 2.875 19.4826 2.875 18.6875V7.18751C2.875 6.39239 3.51738 5.75001 4.3125 5.75001H8.625C9.42012 5.75001 10.0625 5.10762 10.0625 4.31251C10.0625 3.51739 9.42012 2.87501 8.625 2.87501H4.3125Z" fill="WHITE" layoutX="24.0" layoutY="2.0" scaleX="0.8" scaleY="0.8" />
+                           </children>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </AnchorPane>
+                     </right>
+                  </BorderPane>
+                  <GridPane hgap="20.0" prefHeight="69.0" prefWidth="880.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label text="New electricity number">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="electricityField" promptText="Enter electricity number" style="-fx-background-radius: 10;">
+                                 <padding>
+                                    <Insets bottom="8.0" left="10.0" right="8.0" top="8.0" />
+                                 </padding>
+                              </TextField>
+                              <Label fx:id="electricityError" textFill="#f85757" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="64.0" prefWidth="280.0" GridPane.columnIndex="1">
+                           <children>
+                              <Label text="New water number">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="waterField" promptText="Enter electricity number" style="-fx-background-radius: 10;">
+                                 <padding>
+                                    <Insets bottom="8.0" left="10.0" right="8.0" top="8.0" />
+                                 </padding>
+                              </TextField>
+                              <Label fx:id="waterError" textFill="#f85757" />
+                           </children>
+                        </VBox>
+
+                        <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3" />
+                        <Button fx:id="update_electricity_water_numberBtn" mnemonicParsing="false" onAction="#updateElectricityAndWaterNumbers" prefHeight="30.0" prefWidth="250.0" style="-fx-background-radius: 10; -fx-background-color: #107216; -fx-font-size: 13px;" styleClass="updateBTN" stylesheets="@../../../components/invoice/style.css" text="Update elec &amp; water number" textFill="WHITE" GridPane.columnIndex="2">
+
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                  </GridPane>
+                  <GridPane hgap="20.0" prefHeight="110.0" prefWidth="880.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <VBox alignment="CENTER_LEFT" prefHeight="110.0" prefWidth="430.0" spacing="10.0" style="-fx-background-color: #d9d9d9; -fx-background-radius: 10;">
+                           <children>
+                              <HBox>
+                                 <children>
+                                    <Label fx:id="oldElectricityNumber" text="Current electricity number:">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="infrastructuredetail_currentElectric" layoutX="10.0" layoutY="10.0" prefHeight="20.0" prefWidth="100.0" text="900">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="30.0" />
+                                       </HBox.margin>
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="20.0" prefWidth="400.0">
+                                 <children>
+                                    <Label fx:id="newElectricityNumber" text="New electricity number:">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="infrastructuredetail_newElectric" layoutX="10.0" layoutY="10.0" prefWidth="100.0" text="900">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="50.0" />
+                                       </HBox.margin>
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <HBox>
+                                 <children>
+                                    <Label fx:id="totalElectricity" text="Total electricity to used:">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="infrastructuredetail_totalElectricUsed" layoutX="10.0" layoutY="10.0" prefWidth="100.0" text="0">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="50.0" />
+                                       </HBox.margin>
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="20.0" right="10.0" top="10.0" />
+                           </padding>
+                        </VBox>
+                        <VBox alignment="CENTER_LEFT" prefHeight="110.0" prefWidth="430.0" spacing="10.0" style="-fx-background-color: #d9d9d9; -fx-background-radius: 10;" GridPane.columnIndex="1">
+                           <children>
+                              <HBox>
+                                 <children>
+                                    <Label fx:id="oldWaterNumber" text="Current water number:">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="infrastructuredetail_currentWater" layoutX="10.0" layoutY="10.0" prefWidth="100.0" style="-fx-padding: 0 20 0 0;" text="805">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="30.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <HBox>
+                                 <children>
+                                    <Label fx:id="newWaterNumber" text="New water number:">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="infrastructuredetail_newWater" layoutX="10.0" layoutY="10.0" prefWidth="100.0" style="-fx-padding: 0 20 0 0;" text="805">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="50.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <HBox>
+                                 <children>
+                                    <Label fx:id="totalWater" text="Total water to used:">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="infrastructuredetail_totalWaterUsed" layoutX="10.0" layoutY="10.0" prefWidth="100.0" style="-fx-padding: 0 20 0 0;" text="0">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="50.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="20.0" right="10.0" top="10.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                  </GridPane>
+                  <GridPane hgap="20.0" prefHeight="80.0" prefWidth="880.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <VBox alignment="TOP_CENTER" prefHeight="0.0" prefWidth="205.0" style="-fx-background-color: linear-gradient(#3A389B, #0F176F); -fx-background-radius: 15;">
+                           <children>
+                              <Label text="Listed price" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets top="4.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="listedPrice" text="Label" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="24.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
+                           </padding>
+                        </VBox>
+                        <VBox alignment="TOP_CENTER" prefHeight="0.0" prefWidth="205.0" style="-fx-background-color: linear-gradient(#3A389B, #0F176F); -fx-background-radius: 15;" GridPane.columnIndex="1">
+                           <children>
+                              <Label text="Total electricity price" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets top="4.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="electricityPrice" text="label" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="electricityTotalPrice" text="Label" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="24.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
+                           </padding>
+                        </VBox>
+                        <VBox alignment="TOP_CENTER" prefHeight="0.0" prefWidth="205.0" style="-fx-background-color: linear-gradient(#3A389B, #0F176F); -fx-background-radius: 15;" GridPane.columnIndex="2">
+                           <children>
+                              <Label text="Total water price" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets top="4.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="waterPrice" text="label" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="waterTotalPrice" text="Label" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="24.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
+                           </padding>
+                        </VBox>
+                        <VBox alignment="TOP_CENTER" prefHeight="0.0" prefWidth="205.0" style="-fx-background-color: linear-gradient(#da1b60, #fb7f09); -fx-background-radius: 15;" GridPane.columnIndex="3">
+                           <children>
+                              <Label text="Total price" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets top="4.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="total" text="Label" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="24.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </GridPane>
+                  <GridPane hgap="20.0" prefHeight="30.0" prefWidth="880.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="178.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="175.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #107216; -fx-background-radius: 10;" GridPane.columnIndex="4">
+                           <children>
+                              <Button fx:id="infrastructure_createInvoice" mnemonicParsing="false" onAction="#createInvoiceForInfras" prefHeight="30.0" prefWidth="303.0" style="-fx-background-color: #107216; -fx-background-radius: 10;" text="Create Invoice" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </VBox>
+                        <Button mnemonicParsing="false" onAction="#showInvoice" prefHeight="30.0" prefWidth="303.0" style="-fx-background-color: #107216; -fx-background-radius: 10;" text="Show Invoices" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+
+                     </children>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </GridPane>
+                  <GridPane hgap="20.0" prefHeight="30.0" prefWidth="880.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label text="Tenant information">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <VBox alignment="CENTER_RIGHT" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#AddANewTenant" prefHeight="30.0" prefWidth="200.0" style="-fx-background-radius: 10; -fx-background-color: #403da7;" text="Add a new tenant" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                           </children>
+                        </VBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </GridPane>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </top>
+   <center>
+      <ScrollPane fx:id="scrollPane" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: #f4f4f4;" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>

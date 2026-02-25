@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.SVGPath?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="alertPopup_info" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="213.0" prefWidth="390.0" style="-fx-background-radius: 10px;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.rentalhouse.app.views.components.AlertPopup.AlertPopup">
+   <children>
+      <Pane prefHeight="44.0" prefWidth="390.0">
+         <children>
+            <Circle fill="#4583ed" layoutX="37.0" layoutY="36.0" radius="23.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" />
+            <Label fx:id="title" layoutX="68.0" layoutY="21.0" text="Info! Please read this carefully" textFill="#4583ed">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <SVGPath content="M2.8125 3.6875C2.8125 2.94158 3.10882 2.22621 3.63626 1.69876C4.16371 1.17132 4.87908 0.875 5.625 0.875C6.37092 0.875 7.08629 1.17132 7.61374 1.69876C8.14118 2.22621 8.4375 2.94158 8.4375 3.6875C8.4375 4.43342 8.14118 5.14879 7.61374 5.67624C7.08629 6.20368 6.37092 6.5 5.625 6.5C4.87908 6.5 4.16371 6.20368 3.63626 5.67624C3.10882 5.14879 2.8125 4.43342 2.8125 3.6875ZM0 12.125C0 11.0879 0.837891 10.25 1.875 10.25H5.625C6.66211 10.25 7.5 11.0879 7.5 12.125V25.25H9.375C10.4121 25.25 11.25 26.0879 11.25 27.125C11.25 28.1621 10.4121 29 9.375 29H1.875C0.837891 29 0 28.1621 0 27.125C0 26.0879 0.837891 25.25 1.875 25.25H3.75V14H1.875C0.837891 14 0 13.1621 0 12.125Z" fill="WHITE" layoutX="32.0" layoutY="19.0" scaleX="0.8" scaleY="0.8" />
+            <Button fx:id="info_close" layoutX="370.0" layoutY="3.0" minHeight="15.0" minWidth="15.0" mnemonicParsing="false" onAction="#close" prefHeight="15.0" prefWidth="15.0" style="-fx-background-color: #4583ed; -fx-background-radius: 100; -fx-cursor: hand;" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </Pane>
+      <HBox alignment="CENTER" prefHeight="178.0" prefWidth="390.0">
+         <children>
+            <Label fx:id="content" text="Info message">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <Button layoutX="10.0" layoutY="188.0" mnemonicParsing="false" onAction="#close" prefHeight="0.0" prefWidth="390.0" style="-fx-background-color: #4583ed; -fx-background-radius: 0 0 10 10; -fx-cursor: hand;" text="CLOSE" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Button>
+   </children>
+</VBox>

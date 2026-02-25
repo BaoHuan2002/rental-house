@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.SVGPath?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #f4f4f4;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.rentalhouse.app.views.containers.AdminDashboard.AdminDashboardScene">
+   <left>
+      <BorderPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="300.0" style="-fx-background-color: linear-gradient(#383698, #0A0E47);" BorderPane.alignment="CENTER">
+         <right>
+            <AnchorPane prefHeight="960.0" prefWidth="30.0" style="-fx-background-color: #f4f4f4; -fx-background-radius: 20 0 0 20;" BorderPane.alignment="CENTER" />
+         </right>
+         <center>
+            <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <center>
+                  <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <VBox alignment="CENTER" prefHeight="0.0" prefWidth="230.0">
+                           <children>
+                              <ImageView fitHeight="40.0" fitWidth="140.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../assets/images/logo-rentify.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="250.0" prefWidth="220.0" spacing="10.0">
+                           <VBox.margin>
+                              <Insets top="40.0" />
+                           </VBox.margin>
+                           <children>
+                              <AnchorPane fx:id="revenueBtn" prefHeight="70.0" prefWidth="220.0" style="-fx-cursor: hand;">
+                                 <children>
+                                    <Pane fx:id="revenueIconPane" layoutY="13.0" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #8285ff; -fx-background-radius: 10;">
+                                       <children>
+                                          <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="10.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../assets/icons/chart-line-solid.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </Pane>
+                                    <Label fx:id="revenueLabel" layoutX="56.0" layoutY="8.0" prefHeight="54.0" prefWidth="150.0" text="Revenue Management" textFill="#8285ff" wrapText="true">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane fx:id="usersBtn" prefHeight="70.0" prefWidth="220.0" style="-fx-cursor: hand;">
+                                 <children>
+                                    <Pane fx:id="usersIconPane" layoutY="13.0" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: white; -fx-background-radius: 10;">
+                                       <children>
+                                          <SVGPath content="M12.5 14.2857C14.3944 14.2857 16.2112 13.5332 17.5508 12.1936C18.8903 10.8541 19.6429 9.03726 19.6429 7.14286C19.6429 5.24845 18.8903 3.43164 17.5508 2.09209C16.2112 0.752549 14.3944 0 12.5 0C10.6056 0 8.78878 0.752549 7.44924 2.09209C6.10969 3.43164 5.35714 5.24845 5.35714 7.14286C5.35714 9.03726 6.10969 10.8541 7.44924 12.1936C8.78878 13.5332 10.6056 14.2857 12.5 14.2857ZM9.94978 16.9643C4.45312 16.9643 0 21.4174 0 26.9141C0 27.8292 0.742188 28.5714 1.65737 28.5714H23.3426C24.2578 28.5714 25 27.8292 25 26.9141C25 21.4174 20.5469 16.9643 15.0502 16.9643H9.94978Z" fill="#3a389b" layoutX="7.0" layoutY="5.0" scaleX="0.8" scaleY="0.8" />
+                                       </children>
+                                    </Pane>
+                                    <Label fx:id="usersLabel" layoutX="56.0" layoutY="7.0" prefHeight="54.0" prefWidth="150.0" text="Users   Management" textFill="WHITE" wrapText="true">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane fx:id="contactBtn" prefHeight="70.0" prefWidth="220.0" style="-fx-cursor: hand;">
+                                 <children>
+                                    <Pane fx:id="contactIconPane" layoutY="13.0" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #8285FF; -fx-background-radius: 10;">
+                                       <children>
+                                          <SVGPath content="M4.16667 0C1.86849 0 0 1.86849 0 4.16667V29.1667C0 31.4648 1.86849 33.3333 4.16667 33.3333H20.8333C23.1315 33.3333 25 31.4648 25 29.1667V10.4167H16.6667C15.5143 10.4167 14.5833 9.48568 14.5833 8.33333V0H4.16667ZM16.6667 0V8.33333H25L16.6667 0ZM5.20833 4.16667H9.375C9.94792 4.16667 10.4167 4.63542 10.4167 5.20833C10.4167 5.78125 9.94792 6.25 9.375 6.25H5.20833C4.63542 6.25 4.16667 5.78125 4.16667 5.20833C4.16667 4.63542 4.63542 4.16667 5.20833 4.16667ZM5.20833 8.33333H9.375C9.94792 8.33333 10.4167 8.80208 10.4167 9.375C10.4167 9.94792 9.94792 10.4167 9.375 10.4167H5.20833C4.63542 10.4167 4.16667 9.94792 4.16667 9.375C4.16667 8.80208 4.63542 8.33333 5.20833 8.33333ZM8.73698 24.8568C8.33984 26.1784 7.1224 27.0833 5.74219 27.0833H5.20833C4.63542 27.0833 4.16667 26.6146 4.16667 26.0417C4.16667 25.4687 4.63542 25 5.20833 25H5.74219C6.20443 25 6.60807 24.7005 6.73828 24.2578L7.70833 21.0352C7.92969 20.2995 8.60677 19.7917 9.375 19.7917C10.1432 19.7917 10.8203 20.293 11.0417 21.0352L11.7969 23.5482C12.2786 23.1445 12.8906 22.9167 13.5417 22.9167C14.5768 22.9167 15.5208 23.5026 15.9831 24.4271L16.2695 25H19.7917C20.3646 25 20.8333 25.4687 20.8333 26.0417C20.8333 26.6146 20.3646 27.0833 19.7917 27.0833H15.625C15.2279 27.0833 14.8698 26.862 14.694 26.5104L14.1211 25.3581C14.0104 25.1367 13.7891 25 13.5482 25C13.3073 25 13.0794 25.1367 12.9753 25.3581L12.4023 26.5104C12.2135 26.8945 11.8034 27.1224 11.3802 27.0833C10.957 27.0443 10.5924 26.7513 10.4753 26.3477L9.375 22.7214L8.73698 24.8568Z" fill="#3a389b" layoutX="8.0" layoutY="4.0" scaleX="0.8" scaleY="0.8" />
+                                       </children>
+                                    </Pane>
+                                    <Label fx:id="contactLabel" layoutX="56.0" layoutY="6.0" prefHeight="54.0" prefWidth="150.0" text="Contact Management" textFill="#8285ff" wrapText="true">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </VBox>
+                     </children>
+                     <BorderPane.margin>
+                        <Insets />
+                     </BorderPane.margin>
+                     <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </padding>
+                  </VBox>
+               </center>
+               <bottom>
+                  <VBox alignment="CENTER" prefHeight="120.0" prefWidth="260.0" spacing="20.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Pane prefHeight="5.0" prefWidth="220.0" style="-fx-background-color: white; -fx-background-radius: 50;" />
+                        <AnchorPane fx:id="logOutBtn" prefHeight="60.0" prefWidth="220.0" style="-fx-background-color: transparent; -fx-cursor: hand;">
+                           <children>
+                              <Pane layoutY="13.0" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: linear-gradient(to right, #ff8282, #D49797); -fx-background-radius: 10;">
+                                 <children>
+                                    <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="10.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../assets/icons/right-from-bracket-solid.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </Pane>
+                              <Label layoutX="53.0" layoutY="21.0" text="Logout" textFill="#fd6f6f">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                     <padding>
+                        <Insets left="20.0" right="20.0" />
+                     </padding>
+                  </VBox>
+               </bottom>
+            </BorderPane>
+         </center>
+      </BorderPane>
+   </left>
+   <center>
+      <BorderPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <center>
+            <StackPane fx:id="stackPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+         </center>
+         <top>
+            <BorderPane prefHeight="80.0" prefWidth="1140.0" BorderPane.alignment="CENTER">
+               <padding>
+                  <Insets bottom="10.0" right="20.0" top="10.0" />
+               </padding>
+               <center>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label fx:id="titleSceneLabel" text="Users management" textFill="#373596">
+                           <font>
+                              <Font name="System Bold" size="28.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+               </center>
+               <right>
+                  <AnchorPane fx:id="userProfile" prefHeight="60.0" prefWidth="60.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Circle fill="#3a389b" layoutX="30.0" layoutY="30.0" radius="20.0" stroke="#3a389b" strokeType="INSIDE" />
+                        <SVGPath content="M12.5 14.2857C14.3944 14.2857 16.2112 13.5332 17.5508 12.1936C18.8903 10.8541 19.6429 9.03726 19.6429 7.14286C19.6429 5.24845 18.8903 3.43164 17.5508 2.09209C16.2112 0.752549 14.3944 0 12.5 0C10.6056 0 8.78878 0.752549 7.44924 2.09209C6.10969 3.43164 5.35714 5.24845 5.35714 7.14286C5.35714 9.03726 6.10969 10.8541 7.44924 12.1936C8.78878 13.5332 10.6056 14.2857 12.5 14.2857ZM9.94978 16.9643C4.45312 16.9643 0 21.4174 0 26.9141C0 27.8292 0.742188 28.5714 1.65737 28.5714H23.3426C24.2578 28.5714 25 27.8292 25 26.9141C25 21.4174 20.5469 16.9643 15.0502 16.9643H9.94978Z" fill="WHITE" layoutX="18.0" layoutY="16.0" scaleX="0.7" scaleY="0.7" />
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </AnchorPane>
+               </right>
+            </BorderPane>
+         </top>
+      </BorderPane>
+   </center>
+    <top>
+      <BorderPane prefHeight="35.0" prefWidth="1440.0" style="-fx-background-color: #2c2c83;" BorderPane.alignment="CENTER">
+         <left>
+            <Label text="Rental house" textFill="WHITE" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+         </left>
+         <padding>
+            <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+         </padding>
+      </BorderPane>
+   </top>
+</BorderPane>

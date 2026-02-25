@@ -1,0 +1,31 @@
+{
+   "css.lint.vendorPrefix": "ignore",
+   "css.lint.unknownVendorSpecificProperties": "warning",
+   "editor.inlineCompletionsAccessibilityVerbose": false,
+   "explorer.compactFolders": false,
+   "java.debug.settings.onBuildFailureProceed": true,
+   "prettier.arrowParens": "always",
+   "prettier.bracketSpacing": true,
+   "prettier.embeddedLanguageFormatting": "auto",
+   "prettier.htmlWhitespaceSensitivity": "css",
+   "prettier.insertPragma": false,
+   "prettier.jsxSingleQuote": false,
+   "prettier.printWidth": 120,
+   "prettier.proseWrap": "preserve",
+   "prettier.quoteProps": "as-needed",
+   "prettier.requirePragma": false,
+   "prettier.semi": true,
+   "prettier.singleQuote": true,
+   "prettier.tabWidth": 3,
+   "prettier.trailingComma": "all",
+   "prettier.useTabs": false,
+   "prettier.vueIndentScriptAndStyle": false,
+   "[java]": {
+      "editor.defaultFormatter": "redhat.java",
+      "editor.tabSize": 3,
+      "editor.detectIndentation": false
+   },
+   "java.configuration.updateBuildConfiguration": "automatic",
+   "cSpell.words": ["Elec", "Infras", "Initializable", "rentalhouse", "Rentify"],
+   "java.compile.nullAnalysis.mode": "automatic"
+}

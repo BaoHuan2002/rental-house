@@ -1,0 +1,6 @@
+CREATE PROCEDURE GetByID(
+  IN currentID VARCHAR(30) 
+)
+BEGIN
+  SELECT * FROM users WHERE id = currentID;
+END;

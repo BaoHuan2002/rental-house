@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="213.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.rentalhouse.app.views.components.ExpirationPopup.RentalExpiration">
+   <children>
+      <Pane prefHeight="44.0" prefWidth="390.0">
+         <children>
+            <Circle fill="#4593ed" layoutX="37.0" layoutY="36.0" radius="23.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" />
+            <Label layoutX="30.0" layoutY="21.0" text="!" textFill="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="26.0" />
+               </font>
+               <padding>
+                  <Insets left="2.0" />
+               </padding>
+            </Label>
+            <Label fx:id="title" layoutX="68.0" layoutY="21.0" text="Rental expiration" textFill="#4593ed">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <HBox alignment="CENTER" prefHeight="178.0" prefWidth="390.0">
+         <children>
+            <Label fx:id="content" text="You have expired your usage, please renew to continue using.">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+      <AnchorPane prefHeight="50.0" prefWidth="500.0">
+         <children>
+            <Button layoutX="250.0" layoutY="-13.0" mnemonicParsing="false" onAction="#openMembershipPackage" prefHeight="20.0" prefWidth="235.0" style="-fx-background-color: #4593ed; -fx-background-radius: 10;" text="Re-rent" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="exitBtn" layoutX="10.0" layoutY="-13.0" mnemonicParsing="false" onAction="#logout" prefHeight="20.0" prefWidth="235.0" style="-fx-background-color: #ef4444; -fx-background-radius: 10;" text="Exit" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </AnchorPane>
+   </children>
+</VBox>

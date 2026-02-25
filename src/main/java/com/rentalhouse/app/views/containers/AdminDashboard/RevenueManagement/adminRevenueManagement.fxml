@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane fx:id="scrollPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+   minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0"
+   style="-fx-border-color: #f4f4f4; -fx-background-color: #f4f4f4; -fx-focus-traversable: false;"
+   xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+   fx:controller="com.rentalhouse.app.views.containers.AdminDashboard.RevenueManagement.RevenueManagementScene">
+   <padding>
+      <Insets bottom="20.0" />
+   </padding>
+</ScrollPane>

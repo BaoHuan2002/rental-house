@@ -1,0 +1,118 @@
+{
+   "configurations": [
+      {
+         "type": "java",
+         "name": "InvoiceRepository",
+         "request": "launch",
+         "mainClass": "com.rentalhouse.app.repositories.InvoiceRepository",
+         "projectName": "rentalhouse"
+      },
+      {
+         "type": "java",
+         "name": "Uuid",
+         "request": "launch",
+         "mainClass": "com.rentalhouse.utils.Uuid",
+         "projectName": "rentalhouse"
+      },
+      {
+         "type": "java",
+         "name": "ZaloSmsSender",
+         "request": "launch",
+         "mainClass": "com.rentalhouse.app.views.components.invoice.ZaloSmsSender",
+         "projectName": "rentalhouse"
+      },
+      {
+         "type": "java",
+         "name": "VonageAPIs",
+         "request": "launch",
+         "mainClass": "com.rentalhouse.app.views.components.invoice.VonageAPIs",
+         "projectName": "rentalhouse"
+      },
+      {
+         "type": "java",
+         "name": "SinchSmsAPIs",
+         "request": "launch",
+         "mainClass": "com.rentalhouse.app.views.components.invoice.SinchSmsAPIs",
+         "projectName": "rentalhouse"
+      },
+      {
+         "type": "java",
+         "name": "ContactService",
+         "request": "launch",
+         "mainClass": "com.rentalhouse.app.services.ContactService",
+         "projectName": "rentalhouse"
+      },
+      {
+         "type": "java",
+         "name": "InvoiceInfrastructure",
+         "request": "launch",
+         "mainClass": "com.rentalhouse.app.views.components.invoice.InvoiceInfrastructure",
+         "projectName": "rentalhouse"
+      },
+      {
+         "type": "java",
+         "name": "InfrastructureRepository",
+         "request": "launch",
+         "mainClass": "com.rentalhouse.app.repositories.InfrastructureRepository",
+         "projectName": "rentalhouse"
+      },
+      {
+         "type": "java",
+         "name": "Test",
+         "request": "launch",
+         "mainClass": "com.rentalhouse.Test",
+         "projectName": "rentalhouse"
+      },
+      {
+         "type": "java",
+         "name": "InvoiceService",
+         "request": "launch",
+         "mainClass": "com.rentalhouse.app.services.InvoiceService",
+         "projectName": "rentalhouse"
+      },
+      {
+         "type": "java",
+         "name": "ValidateInput",
+         "request": "launch",
+         "mainClass": "com.rentalhouse.app.middlewares.ValidateInput",
+         "projectName": "rentalhouse"
+      },
+      {
+         "type": "java",
+         "name": "TenantController",
+         "request": "launch",
+         "mainClass": "com.rentalhouse.app.controllers.TenantController",
+         "projectName": "rentalhouse"
+      },
+      {
+         "type": "java",
+         "name": "InfrastructureController",
+         "request": "launch",
+         "mainClass": "com.rentalhouse.app.controllers.InfrastructureController",
+         "projectName": "rentalhouse"
+      },
+      {
+         "type": "java",
+         "name": "Migration",
+         "request": "launch",
+         "mainClass": "com.rentalhouse.database.migration.Migration",
+         "projectName": "rentalhouse"
+      },
+      {
+         "type": "java",
+         "name": "Main",
+         "request": "launch",
+         "mainClass": "com.rentalhouse.Main",
+         "projectName": "rentalhouse",
+         "vmArgs": "--module-path ${workspaceFolder}/javafx/lib --add-modules javafx.controls,javafx.fxml,javafx.swing,javafx.web,javafx.media,javafx.graphics"
+      },
+      {
+         "type": "java",
+         "name": "Test",
+         "request": "launch",
+         "mainClass": "com.rentalhouse.Test",
+         "projectName": "rentalhouse",
+         "vmArgs": "--module-path ${workspaceFolder}/javafx/lib --add-modules javafx.controls,javafx.fxml,javafx.swing,javafx.web,javafx.media,javafx.graphics"
+      }
+   ]
+}

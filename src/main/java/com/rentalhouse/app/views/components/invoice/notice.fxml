@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="anchorPane_notice" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.84" prefHeight="130.0" prefWidth="430.0" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-background-color: linear-gradient(to bottom right, #ff5100, #ff0000);; -fx-font-size: 12px;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.rentalhouse.app.views.components.invoice.NoticeController">
+    <children>
+        <Label alignment="TOP_LEFT" layoutX="40.0" layoutY="14.0" prefHeight="20.0" prefWidth="38.0" text="Case :" textFill="WHITE" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+            <font>
+                <Font name="Tahoma Bold" size="12.0" />
+            </font>
+        </Label>
+        <Label fx:id="panelNotice_case" alignment="TOP_LEFT" layoutX="130.0" layoutY="5.0" prefHeight="20.0" prefWidth="86.0" text="Title Case" textFill="WHITE" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="194.0" AnchorPane.topAnchor="10.0">
+            <font>
+                <Font name="Tahoma Bold" size="12.0" />
+            </font>
+        </Label>
+        <Label alignment="TOP_LEFT" layoutX="20.0" layoutY="15.0" prefHeight="20.0" prefWidth="115.0" text="Receive Amount :" textFill="WHITE" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="35.0">
+            <font>
+                <Font name="Tahoma Bold" size="11.0" />
+            </font>
+        </Label>
+        <Label fx:id="panelNotice_receiveAmount" alignment="TOP_LEFT" layoutX="68.0" layoutY="25.0" prefHeight="20.0" prefWidth="200.0" text="Received Amount" textFill="WHITE" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="35.0">
+            <font>
+                <Font name=".VnArial Bold" size="12.0" />
+            </font>
+        </Label>
+        <Label alignment="TOP_LEFT" layoutX="20.0" layoutY="35.0" prefHeight="20.0" prefWidth="115.0" text="Remaining Amount :" textFill="WHITE" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="55.0">
+            <font>
+                <Font name="Tahoma Bold" size="11.0" />
+            </font>
+        </Label>
+        <Label fx:id="panelNotice_remainingAmount" alignment="TOP_LEFT" layoutX="130.0" layoutY="35.0" prefHeight="20.0" prefWidth="200.0" text="Remaining Amount" textFill="WHITE" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="55.0">
+            <font>
+                <Font name=".VnArial Bold" size="12.0" />
+            </font>
+        </Label>
+        <Label alignment="TOP_LEFT" layoutX="20.0" layoutY="55.0" prefHeight="20.0" prefWidth="115.0" text="Description :" textFill="WHITE" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="75.0">
+            <font>
+                <Font name="Tahoma Bold" size="11.0" />
+            </font>
+        </Label>
+        <Label fx:id="panelNotice_date" alignment="CENTER_RIGHT" layoutX="264.0" layoutY="85.0" prefHeight="20.0" prefWidth="90.0" text="Created_date" textFill="WHITE" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="10.0">
+            <font>
+                <Font name=".VnArial Bold" size="11.0" />
+            </font>
+        </Label>
+        <Button fx:id="lineNotice_deleteBTN" layoutX="319.0" layoutY="13.0" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" prefHeight="15.0" prefWidth="15.0" style="-fx-background-color: #b90f0f; -fx-text-fill: #ffffff; -fx-background-radius: 50; -fx-border-radius: 50;" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </Button>
+      <Text fx:id="panelNotice_content" fill="WHITE" layoutX="170.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="260.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="75.0">
+         <font>
+            <Font name="Tahoma Bold" size="11.0" />
+         </font>
+      </Text>
+      <RadioButton fx:id="notice_checkDone" layoutX="236.0" layoutY="12.0" mnemonicParsing="false" text="Done" textFill="WHITE" AnchorPane.leftAnchor="270.0" AnchorPane.topAnchor="10.0">
+         <font>
+            <Font name="Tahoma Bold" size="12.0" />
+         </font>
+      </RadioButton>
+    </children>
+   <styleClass>
+      <String fx:value="background-center" />
+      <String fx:value="shadow" />
+   </styleClass>
+   <padding>
+      <Insets left="10.0" />
+   </padding>
+</AnchorPane>

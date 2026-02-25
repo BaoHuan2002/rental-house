@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="493.0" prefWidth="475.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.rentalhouse.app.views.components.UserProfile.UserProfileForm">
+   <top>
+      <BorderPane prefHeight="40.0" prefWidth="450.0" style="-fx-background-color: linear-gradient(#0F176F, #0F1B9A); -fx-background-radius: 10 10 0 0;" BorderPane.alignment="CENTER">
+         <center>
+            <Label text="Profile " textFill="WHITE" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+         </center>
+         <right>
+            <Button fx:id="profileUser_closeBTN" minHeight="20.0" minWidth="20.0" mnemonicParsing="false" onAction="#close" prefHeight="20.0" prefWidth="20.0" style="-fx-background-radius: 100; -fx-color-radius: 100; -fx-background-color: red;" text="Button" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets right="10.0" />
+               </BorderPane.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </right>
+      </BorderPane>
+   </top>
+   <center>
+      <BorderPane prefHeight="200.0" prefWidth="450.0" BorderPane.alignment="CENTER">
+         <center>
+            <VBox fx:id="vBox" prefHeight="200.0" prefWidth="450.0" spacing="10.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox fx:id="hBoxRenew" prefHeight="100.0" prefWidth="200.0" spacing="100.0">
+                     <children>
+                        <Label fx:id="profileLabel" text="Profile Details">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="renewBtn" mnemonicParsing="false" onAction="#openMembershipPackage" prefHeight="26.0" prefWidth="200.0" style="-fx-background-color: linear-gradient(#0F176F, #0F1B9A); -fx-background-radius: 10;" text="Renew" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="19.0" prefWidth="410.0">
+                     <children>
+                        <Label prefHeight="22.0" prefWidth="320.0" text="Name">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="name" prefHeight="22.0" prefWidth="290.0" text="Name">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox fx:id="hBoxMembership" prefHeight="19.0" prefWidth="410.0">
+                     <children>
+                        <Label prefHeight="22.0" prefWidth="320.0" text="Membership">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="membership" prefWidth="290.0" text="Name">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="19.0" prefWidth="410.0">
+                     <children>
+                        <Label prefHeight="22.0" prefWidth="320.0" text="Role">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="role" prefWidth="290.0" text="Name">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <Label prefHeight="23.0" prefWidth="133.0" text="Contact Info">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                     <padding>
+                        <Insets top="10.0" />
+                     </padding>
+                  </Label>
+                  <HBox prefHeight="19.0" prefWidth="410.0">
+                     <children>
+                        <Label prefHeight="22.0" prefWidth="320.0" text="Email">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="email" prefHeight="22.0" prefWidth="290.0" text="Name">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="19.0" prefWidth="410.0">
+                     <children>
+                        <Label prefHeight="22.0" prefWidth="320.0" text="Phone">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="phone" prefHeight="22.0" prefWidth="290.0" text="Name">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox fx:id="hBoxBankInfo" prefHeight="19.0" prefWidth="410.0" spacing="100.0">
+                     <children>
+                        <Label fx:id="bankInfoLabel" prefHeight="23.0" prefWidth="134.0" text="Bank Info">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                        </Label>
+                        <Button fx:id="bankInfoBtn" mnemonicParsing="false" onAction="#openChangeBankInfo" prefHeight="26.0" prefWidth="200.0" style="-fx-background-color: linear-gradient(#0F176F, #0F1B9A); -fx-background-radius: 10;" text="Change bank info" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets top="8.0" />
+                           </HBox.margin>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox fx:id="hboxBankAccountNumber" prefHeight="19.0" prefWidth="410.0">
+                     <children>
+                        <Label prefHeight="22.0" prefWidth="320.0" text="Bank account number">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="bankAccountNumber" prefHeight="22.0" prefWidth="290.0" text="Empty">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox fx:id="hBoxBankName" prefHeight="19.0" prefWidth="410.0">
+                     <children>
+                        <Label prefHeight="22.0" prefWidth="320.0" text="Bank name">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="bankName" prefHeight="22.0" prefWidth="290.0" text="Empty">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="10.0" />
+               </padding>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+            </VBox>
+         </center>
+         <bottom>
+            <HBox fx:id="hBoxButton" prefHeight="16.0" prefWidth="450.0" spacing="20.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#openChangePasswordForm" prefHeight="26.0" prefWidth="200.0" style="-fx-background-color: linear-gradient(to right ,#70C11F, #355B0E); -fx-background-radius: 10;" text="Change password" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#openChangePhoneForm" prefHeight="26.0" prefWidth="200.0" style="-fx-background-color: linear-gradient(to right, #FD4D4D, #980606); -fx-background-radius: 10;" text="Change phone" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="28.0" top="10.0" />
+               </padding>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+            </HBox>
+         </bottom>
+      </BorderPane>
+   </center>
+</BorderPane>

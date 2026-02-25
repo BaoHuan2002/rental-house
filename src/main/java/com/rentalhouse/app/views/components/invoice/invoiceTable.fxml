@@ -1,0 +1,752 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="main_form" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1200.0" style="-fx-border-width: 2; -fx-border-color: #031380; -fx-border-radius: 10; -fx-background-radius: 10;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.rentalhouse.app.views.components.invoice.InvoicesTable">
+   <children>
+      <AnchorPane fx:id="tableInvoice_container" prefHeight="500.0" prefWidth="900.0" style="-fx-border-width: 2; -fx-border-color: #031380; -fx-border-radius: 10; -fx-background-radius: 10;">
+         <children>
+            <AnchorPane layoutX="152.0" layoutY="27.0" prefHeight="500.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <BorderPane layoutX="288.0" layoutY="104.0" prefHeight="500.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <top>
+                        <AnchorPane fx:id="tableInvoice_header" prefHeight="60.0" prefWidth="800.0" styleClass="background-header-semi" stylesheets="@style.css" BorderPane.alignment="CENTER">
+                           <children>
+                              <AnchorPane fx:id="invoiceTable_titleBar" layoutX="352.0" layoutY="14.0" onMouseClicked="#doubleClickTitleBar" prefHeight="60.0" prefWidth="900.0" styleClass="background-header" stylesheets="@style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <FontAwesomeIcon fill="WHITE" glyphName="MONEY" layoutX="14.0" layoutY="18.0" size="1.5EM" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="5.0" />
+                                    <Label layoutX="75.0" layoutY="6.0" text="Invoice Table" textFill="WHITE" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="5.0">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="tableInvoice_search" layoutX="301.0" layoutY="18.0" prefHeight="30.0" prefWidth="350.0" promptText="Search Price Or Date format (mm / yyyy)" styleClass="textField" stylesheets="@style.css" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="310.0" AnchorPane.topAnchor="15.0">
+                                       <padding>
+                                          <Insets left="10.0" right="35.0" />
+                                       </padding>
+                                    </TextField>
+                                    <FontAwesomeIcon fill="#ababab" glyphName="SEARCH" layoutX="621.0" layoutY="36.428571701049805" size="1.5EM" AnchorPane.topAnchor="21.0" />
+                                    <Button fx:id="close" layoutX="812.0" layoutY="18.0" minHeight="15.0" minWidth="15.0" mnemonicParsing="false" onAction="#close" prefHeight="15.0" prefWidth="15.0" styleClass="button-close" stylesheets="@style.css" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
+                                    <Button fx:id="minimize" layoutX="880.0" layoutY="15.0" minHeight="15.0" minWidth="15.0" mnemonicParsing="false" onAction="#minimizeRestore" prefHeight="15.0" prefWidth="15.0" styleClass="button-minimize" stylesheets="@style.css" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="10.0" />
+                                    <Button fx:id="minus" layoutX="855.0" layoutY="15.0" minHeight="15.0" minWidth="15.0" mnemonicParsing="false" onAction="#minus" prefHeight="15.0" prefWidth="15.0" styleClass="button-minus" stylesheets="@style.css" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="10.0" />
+                                    <Button fx:id="restore" layoutX="957.0" layoutY="20.0" minHeight="15.0" minWidth="15.0" mnemonicParsing="false" onAction="#minimizeRestore" prefHeight="15.0" prefWidth="15.0" styleClass="button-minimize" stylesheets="@style.css" visible="false" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="10.0" />
+                                    <ComboBox fx:id="tableInvoice_selectMonth" layoutX="682.0" layoutY="18.0" prefHeight="30.0" prefWidth="120.0" promptText="Select Month" styleClass="combo-box" stylesheets="@style.css" AnchorPane.rightAnchor="400.0" AnchorPane.topAnchor="15.0" />
+                                    <ComboBox fx:id="tableInvoice_selectYear" layoutX="847.0" layoutY="18.0" prefHeight="30.0" prefWidth="120.0" promptText="Select Year" styleClass="combo-box" stylesheets="@style.css" AnchorPane.rightAnchor="260.0" AnchorPane.topAnchor="15.0" />
+                                    <ComboBox fx:id="tableInvoice_selectPriceTotal" layoutX="971.0" layoutY="15.0" prefHeight="30.0" prefWidth="134.0" promptText="Select Price Total" styleClass="combo-box" stylesheets="@style.css" AnchorPane.rightAnchor="106.0" AnchorPane.topAnchor="15.0" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                     </top>
+                     <left>
+                        <AnchorPane fx:id="tableInvoice_sideBar" prefHeight="455.0" prefWidth="300.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <AnchorPane layoutX="50.0" layoutY="43.0" prefHeight="455.0" prefWidth="250.0" styleClass="background-header" stylesheets="@style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="150.0" text="Old Water Number :" textFill="WHITE" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="60.0">
+                                       <font>
+                                          <Font name="Tahoma Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="tableInvoice_oldWater" layoutX="14.0" layoutY="25.0" prefHeight="30.0" prefWidth="120.0" styleClass="textField-number" stylesheets="@style.css" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="60.0" />
+                                    <Label layoutX="14.0" layoutY="68.0" prefHeight="25.0" prefWidth="150.0" text="New Water Number :" textFill="WHITE" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="100.0">
+                                       <font>
+                                          <Font name="Tahoma Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="tableInvoice_newWater" layoutX="14.0" layoutY="98.0" prefHeight="30.0" prefWidth="120.0" styleClass="textField-number" stylesheets="@style.css" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="100.0" />
+                                    <Label layoutX="14.0" layoutY="144.0" prefHeight="25.0" prefWidth="150.0" text="Old Electric Number :" textFill="WHITE" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="140.0">
+                                       <font>
+                                          <Font name="Tahoma Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="tableInvoice_oldElectric" layoutX="61.0" layoutY="165.0" prefHeight="30.0" prefWidth="120.0" styleClass="textField-number" stylesheets="@style.css" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="140.0" />
+                                    <Label layoutX="26.0" layoutY="209.0" prefHeight="25.0" prefWidth="150.0" text="New Electric Number :" textFill="WHITE" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="180.0">
+                                       <font>
+                                          <Font name="Tahoma Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="tableInvoice_newElectric" layoutX="14.0" layoutY="235.0" prefHeight="30.0" prefWidth="120.0" styleClass="textField-number" stylesheets="@style.css" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="180.0" />
+                                    <Line endX="171.0" layoutX="114.5" layoutY="289.0" opacity="0.39" startX="-100.0" stroke="WHITE" strokeWidth="0.5" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="300.0" />
+                                    <Label layoutX="14.0" layoutY="307.0" prefWidth="130.0" text="Price Listed :" textFill="WHITE" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="310.0">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="14.0" layoutY="338.0" prefWidth="130.0" text="Electric Price  Total: " textFill="WHITE" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="340.0">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="14.0" layoutY="368.0" prefWidth="130.0" text="Water Price Total: " textFill="WHITE" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="370.0">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="20.0" layoutY="380.0" prefWidth="130.0" text="TOTAL :" textFill="WHITE" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="410.0">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Button fx:id="tableInvoice_updateShowPDF" layoutX="88.0" layoutY="446.0" mnemonicParsing="false" onAction="#showFilePDF" prefHeight="40.0" styleClass="button-pdf" stylesheets="@style.css" text="Show PDF File" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+                                    <Label fx:id="tableInvoice_listedPrice" alignment="CENTER_RIGHT" layoutX="186.0" layoutY="311.0" text="- -" textFill="WHITE" AnchorPane.leftAnchor="160.0" AnchorPane.rightAnchor="20.0">
+                                       <font>
+                                          <Font name="Tahoma Bold" size="16.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets right="10.0" />
+                                       </padding>
+                                    </Label>
+                                    <Label fx:id="tableInvoice_electricPriceTotal" alignment="CENTER_RIGHT" layoutX="228.0" layoutY="340.0" text="- -" textFill="WHITE" AnchorPane.leftAnchor="160.0" AnchorPane.rightAnchor="20.0">
+                                       <font>
+                                          <Font name="Tahoma Bold" size="16.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets right="10.0" />
+                                       </padding>
+                                    </Label>
+                                    <Label fx:id="tableInvoice_waterPriceTotal" alignment="CENTER_RIGHT" layoutX="228.0" layoutY="370.0" text="- -" textFill="WHITE" AnchorPane.leftAnchor="160.0" AnchorPane.rightAnchor="20.0">
+                                       <font>
+                                          <Font name="Tahoma Bold" size="16.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets right="10.0" />
+                                       </padding>
+                                    </Label>
+                                    <Label fx:id="tableInvoice_totalPrice" alignment="CENTER_RIGHT" layoutX="228.0" layoutY="390.0" text="- -" textFill="WHITE" AnchorPane.leftAnchor="160.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="410.0">
+                                       <font>
+                                          <Font name="Tahoma Bold" size="16.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets right="10.0" />
+                                       </padding>
+                                    </Label>
+                                    <Line endX="171.0" layoutX="114.0" layoutY="438.0" opacity="0.39" startX="-100.0" stroke="WHITE" strokeWidth="0.5" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+                                    <Line endX="171.0" layoutX="124.0" layoutY="187.0" opacity="0.39" startX="-100.0" stroke="WHITE" strokeWidth="0.5" AnchorPane.topAnchor="220.0" />
+                                    <Label layoutX="24.0" layoutY="188.0" prefHeight="25.0" prefWidth="150.0" text="Electricity Total Used :" textFill="WHITE" AnchorPane.topAnchor="230.0">
+                                       <font>
+                                          <Font name="Tahoma Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="24.0" layoutY="223.0" prefHeight="25.0" prefWidth="150.0" text="Water Total Used :" textFill="WHITE" AnchorPane.topAnchor="270.0">
+                                       <font>
+                                          <Font name="Tahoma Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="tableInvoice_electricityUsed" alignment="CENTER_RIGHT" layoutX="263.0" layoutY="208.0" text="- -" textFill="WHITE" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="235.0">
+                                       <font>
+                                          <Font name="Tahoma Bold" size="14.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets right="10.0" />
+                                       </padding>
+                                    </Label>
+                                    <Label fx:id="tableInvoice_waterUsed" alignment="CENTER_RIGHT" layoutX="263.0" layoutY="253.0" text="- -" textFill="WHITE" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="275.0">
+                                       <font>
+                                          <Font name="Tahoma Bold" size="14.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets right="10.0" />
+                                       </padding>
+                                    </Label>
+                                    <Label layoutX="30.0" layoutY="8.0" prefHeight="30.0" prefWidth="68.0" text="Date :" textFill="WHITE" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="0.0">
+                                       <font>
+                                          <Font name="Tahoma Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Line endX="171.0" layoutX="120.0" layoutY="30.0" opacity="0.39" startX="-100.0" stroke="WHITE" strokeWidth="0.5" />
+                                    <Label fx:id="tableInvoice_showDate" alignment="CENTER_RIGHT" layoutX="198.0" prefHeight="30.0" prefWidth="188.0" text="- -" textFill="WHITE" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="0.0">
+                                       <font>
+                                          <Font name="Tahoma Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Button fx:id="tableInvoice_updateBTN" layoutX="34.0" layoutY="558.0" mnemonicParsing="false" onAction="#updateClick" prefHeight="40.0" prefWidth="100.0" styleClass="updateBTN" stylesheets="@style.css" text="Update " AnchorPane.bottomAnchor="55.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+                                       <font>
+                                          <Font name="Gill Sans MT Bold" size="15.0" />
+                                       </font>
+                                       <textFill>
+                                          <LinearGradient endX="1.0" endY="1.0">
+                                             <stops>
+                                                <Stop>
+                                                   <color>
+                                                      <Color red="1.0" green="1.0" blue="1.0" />
+                                                   </color>
+                                                </Stop>
+                                                <Stop offset="1.0">
+                                                   <color>
+                                                      <Color red="1.0" green="1.0" blue="1.0" />
+                                                   </color>
+                                                </Stop>
+                                             </stops>
+                                          </LinearGradient>
+                                       </textFill>
+                                       <effect>
+                                          <Lighting diffuseConstant="1.39" specularConstant="0.71" specularExponent="31.95" surfaceScale="2.07">
+                                             <bumpInput>
+                                                <Shadow />
+                                             </bumpInput>
+                                             <light>
+                                                <Light.Distant />
+                                             </light>
+                                          </Lighting>
+                                       </effect>
+                                    </Button>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                     </left>
+                     <center>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <AnchorPane fx:id="tableInvoice_tableForm" layoutX="225.0" layoutY="71.0" prefHeight="455.0" prefWidth="650.0" stylesheets="@style.css" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                 <styleClass>
+                                    <String fx:value="background-center" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                                 <children>
+                                    <Label layoutX="32.0" layoutY="13.0" prefHeight="25.0" prefWidth="116.0" text="Infrastructure :" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="10.0">
+                                       <font>
+                                          <Font name="Tahoma Bold" size="14.0" />
+                                       </font>
+                                       <textFill>
+                                          <LinearGradient endX="1.0" endY="1.0">
+                                             <stops>
+                                                <Stop>
+                                                   <color>
+                                                      <Color red="0.18025097250938416" green="0.10989278554916382" blue="0.5789473652839661" />
+                                                   </color>
+                                                </Stop>
+                                                <Stop offset="1.0">
+                                                   <color>
+                                                      <Color red="0.11365131288766861" green="0.08223684132099152" blue="0.7105262875556946" />
+                                                   </color>
+                                                </Stop>
+                                             </stops>
+                                          </LinearGradient>
+                                       </textFill>
+                                    </Label>
+                                    <Label fx:id="tableInvoice_infrastructureID" alignment="CENTER" layoutX="160.0" layoutY="10.0" prefHeight="30.0" prefWidth="180.0" style="-fx-border-width: 0.4; -fx-border-color: linear-gradient(to bottom right, #3A389B, #0F176F); -fx-background-radius: 20px; -fx-border-radius: 20px;" text="- -" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="10.0">
+                                       <font>
+                                          <Font name="Tahoma Bold" size="14.0" />
+                                       </font>
+                                       <textFill>
+                                          <LinearGradient endX="1.0" endY="1.0">
+                                             <stops>
+                                                <Stop>
+                                                   <color>
+                                                      <Color red="0.18025097250938416" green="0.10989278554916382" blue="0.5789473652839661" />
+                                                   </color>
+                                                </Stop>
+                                                <Stop offset="1.0">
+                                                   <color>
+                                                      <Color red="0.11365131288766861" green="0.08223684132099152" blue="0.7105262875556946" />
+                                                   </color>
+                                                </Stop>
+                                             </stops>
+                                          </LinearGradient>
+                                       </textFill>
+                                    </Label>
+                                    <TableView fx:id="tableInvoice_tableViews" layoutX="14.0" layoutY="60.0" onMouseClicked="#doubleClicked" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: transparent;" AnchorPane.bottomAnchor="80.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="120.0">
+                                       <columns>
+                                          <TableColumn fx:id="tableInvoice_columnIDInvoice" minWidth="0.0" prefWidth="100.0" text="ID" />
+                                          <TableColumn fx:id="tableInvoice_column_listedPrice" minWidth="0.0" prefWidth="100.0" text="Listed Price" />
+                                          <TableColumn fx:id="tableInvoice_column_oldElectric" minWidth="0.0" prefWidth="100.0" text="Old ELect N.O" />
+                                          <TableColumn fx:id="tableInvoice_column_newElectric" minWidth="0.0" prefWidth="100.0" text="New Elect N.O" />
+                                          <TableColumn fx:id="tableInvoice_column_oldWater" minWidth="0.0" prefWidth="100.0" text="Old Water N.O" />
+                                          <TableColumn fx:id="tableInvoice_column_newWater" prefWidth="100.0" text="New Water N.O" />
+                                          <TableColumn fx:id="tableInvoice_column_waterPrice" prefWidth="100.0" text="Water Price" />
+                                          <TableColumn fx:id="tableInvoice_column_electricPrice" prefWidth="100.0" text="Electric Price" />
+                                          <TableColumn fx:id="tableInvoice_column_totalPrice" minWidth="0.0" prefWidth="100.0" text="Total Price" />
+                                          <TableColumn fx:id="tableInvoice_column_date" minWidth="0.0" prefWidth="100.0" text="Date" />
+                                          <TableColumn fx:id="tableInvoice_column_checkPaid" minWidth="0.0" prefWidth="100.0" text="Check Paid" />
+                                          <TableColumn fx:id="tableInvoice_column_statusPayment" minWidth="0.0" prefWidth="100.0" text="Status Payment" />
+                                          <TableColumn fx:id="tableInvoice_column_noticesButton" minWidth="0.0" prefWidth="100.0" text="Notices" />
+                                       </columns>
+                                    </TableView>
+                                    <Label layoutX="20.0" layoutY="20.0" prefHeight="25.0" prefWidth="122.0" text="Invoices Table" textFill="RED" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="10.0">
+                                       <font>
+                                          <Font name="Tahoma Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="20.0" layoutY="50.0" minHeight="10.0" minWidth="30.0" prefHeight="10.0" prefWidth="30.0" style="-fx-background-color: #0070c6;" styleClass="label-color" stylesheets="@style.css" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="70.0" />
+                                    <Label layoutX="60.0" layoutY="50.0" minHeight="20.0" minWidth="50.0" prefHeight="20.0" prefWidth="30.0" text="Date" textFill="#0070c6" AnchorPane.leftAnchor="60.0" AnchorPane.topAnchor="65.0">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="20.0" layoutY="77.0" minHeight="10.0" minWidth="30.0" prefHeight="10.0" prefWidth="30.0" style="-fx-background-color: #0F176F;" styleClass="label-color" stylesheets="@style.css" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="95.0" />
+                                    <Label layoutX="70.0" layoutY="60.0" minHeight="20.0" minWidth="50.0" prefHeight="20.0" prefWidth="81.0" text="Old Number" textFill="#0f176f" AnchorPane.leftAnchor="60.0" AnchorPane.topAnchor="90.0">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="30.0" layoutY="65.0" minHeight="10.0" minWidth="30.0" prefHeight="10.0" prefWidth="30.0" style="-fx-background-color: ff5500;" styleClass="label-color" stylesheets="@style.css" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="70.0" />
+                                    <Label layoutX="70.0" layoutY="60.0" minHeight="20.0" minWidth="50.0" prefHeight="20.0" prefWidth="77.0" text="Listed Price" textFill="#ff5500" AnchorPane.leftAnchor="190.0" AnchorPane.topAnchor="65.0">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="150.0" layoutY="75.0" minHeight="10.0" minWidth="30.0" prefHeight="10.0" prefWidth="30.0" style="-fx-background-color: #279a00;" styleClass="label-color" stylesheets="@style.css" AnchorPane.topAnchor="95.0" />
+                                    <Label layoutX="190.0" layoutY="70.0" minHeight="20.0" minWidth="50.0" prefHeight="20.0" prefWidth="77.0" text="New value" textFill="#279a00" AnchorPane.topAnchor="90.0">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="282.0" layoutY="75.0" minHeight="10.0" minWidth="30.0" prefHeight="10.0" prefWidth="30.0" style="-fx-background-color: #bc0000;" styleClass="label-color" stylesheets="@style.css" AnchorPane.leftAnchor="270.0" AnchorPane.topAnchor="95.0" />
+                                    <Label layoutX="322.0" layoutY="70.0" minHeight="20.0" minWidth="50.0" prefHeight="20.0" prefWidth="77.0" text="Price Total" textFill="#bc0000" AnchorPane.leftAnchor="310.0" AnchorPane.topAnchor="90.0">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="85.0" layoutY="438.0" minHeight="20.0" minWidth="50.0" prefHeight="20.0" prefWidth="117.0" text="Electricity N.umber :" textFill="#bc0000" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="160.0">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="85.0" layoutY="458.0" minHeight="20.0" minWidth="50.0" prefHeight="20.0" prefWidth="97.0" text="Water Number :" textFill="#0f176f" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="20.0">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="220.0" layoutY="438.0" minHeight="20.0" minWidth="41.0" prefHeight="20.0" prefWidth="41.0" text="Kw/ h" textFill="#bc0000" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="280.0">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="220.0" layoutY="458.0" minHeight="20.0" minWidth="24.0" prefHeight="20.0" prefWidth="24.0" text="m3" textFill="#0f176f" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="120.0">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="95.0" layoutY="447.0" minHeight="20.0" minWidth="40.0" prefHeight="20.0" prefWidth="40.0" text="Price :" textFill="#149731" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="350.0">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER" layoutX="248.0" layoutY="437.0" minHeight="20.0" minWidth="18.0" prefHeight="20.0" prefWidth="29.0" text="USD" textFill="#149731" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="390.0">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER_RIGHT" layoutX="443.0" layoutY="65.0" minHeight="20.0" minWidth="50.0" prefHeight="20.0" prefWidth="77.0" text="Water Price :" textFill="#0f176f" AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="65.0">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER_RIGHT" layoutX="453.0" layoutY="90.0" minHeight="20.0" minWidth="50.0" prefHeight="20.0" prefWidth="84.0" text="Electric Price :" textFill="#bc0000" AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="90.0">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="tableInvoice_WPrice" alignment="CENTER" layoutX="543.0" layoutY="65.0" minHeight="20.0" minWidth="50.0" prefHeight="20.0" prefWidth="77.0" style="-fx-border-width: 0.4; -fx-border-color: #0f176f; -fx-background-radius: 5; -fx-border-radius: 5;" text=" - -" textFill="#0f176f" AnchorPane.rightAnchor="20.0">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="tableInvoice_EPrice" alignment="CENTER" layoutX="549.0" layoutY="90.0" minHeight="20.0" minWidth="50.0" prefHeight="20.0" prefWidth="77.0" style="-fx-border-width: 0.4; -fx-border-color: #bc0000; -fx-background-radius: 5; -fx-border-radius: 5;" text="- -" textFill="#bc0000" AnchorPane.rightAnchor="20.0">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Button layoutX="154.0" layoutY="12.0" mnemonicParsing="false" onAction="#reloadTable" prefHeight="25.0" prefWidth="70.0" styleClass="reloadBTN" stylesheets="@style.css" text="Reload " AnchorPane.leftAnchor="155.0" AnchorPane.topAnchor="10.0">
+                                       <font>
+                                          <Font name="Gill Sans MT Bold" size="11.0" />
+                                       </font>
+                                       <textFill>
+                                          <LinearGradient endX="1.0" endY="1.0">
+                                             <stops>
+                                                <Stop>
+                                                   <color>
+                                                      <Color red="0.026133041828870773" green="0.0667184442281723" blue="0.5131579041481018" />
+                                                   </color>
+                                                </Stop>
+                                                <Stop offset="1.0">
+                                                   <color>
+                                                      <Color red="0.028813352808356285" green="0.18990619480609894" blue="0.5657894611358643" />
+                                                   </color>
+                                                </Stop>
+                                             </stops>
+                                          </LinearGradient>
+                                       </textFill>
+                                    </Button>
+                                    <Label fx:id="tableInvoice_alertReload" alignment="CENTER" layoutX="400.0" layoutY="90.0" minHeight="20.0" minWidth="50.0" prefHeight="20.0" prefWidth="250.0" textFill="#2c00da" AnchorPane.leftAnchor="380.0" AnchorPane.rightAnchor="240.0" AnchorPane.topAnchor="95.0">
+                                       <font>
+                                          <Font name="System Bold Italic" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <AnchorPane layoutX="406.0" layoutY="422.0" prefHeight="50.0" prefWidth="320.0" styleClass="contain-content" stylesheets="@style.css" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="20.0">
+                                       <children>
+                                          <Label alignment="CENTER_RIGHT" minHeight="20.0" minWidth="50.0" prefHeight="20.0" prefWidth="105.0" text="Water price Total :" textFill="WHITE" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="25.0">
+                                             <font>
+                                                <Font name="System Bold" size="11.0" />
+                                             </font>
+                                          </Label>
+                                          <Label alignment="CENTER_RIGHT" layoutX="142.0" layoutY="15.0" minHeight="20.0" minWidth="50.0" prefHeight="20.0" prefWidth="200.0" text="Water number to used  *  Water Price" textFill="WHITE" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="25.0">
+                                             <font>
+                                                <Font name="System Italic" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <Label alignment="CENTER_RIGHT" layoutX="14.0" layoutY="25.0" minHeight="20.0" minWidth="50.0" prefHeight="20.0" prefWidth="105.0" text="Electric Price Total :" textFill="WHITE" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="2.0">
+                                             <font>
+                                                <Font name="System Bold" size="11.0" />
+                                             </font>
+                                          </Label>
+                                          <Label alignment="CENTER_RIGHT" layoutX="117.0" layoutY="5.0" minHeight="20.0" minWidth="50.0" prefHeight="20.0" prefWidth="200.0" text="Elect number to used  *  Elect Price" textFill="WHITE" AnchorPane.leftAnchor="117.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="2.0">
+                                             <font>
+                                                <Font name="System Italic" size="12.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane fx:id="tableInvoice_alertPayment" layoutX="248.0" layoutY="4.0" prefHeight="18.0" prefWidth="100.0" style="-fx-background-color: transparent;" AnchorPane.leftAnchor="250.0" AnchorPane.topAnchor="12.0">
+                                       <children>
+                                          <FontAwesomeIcon fx:id="tableInvoice_bellAlertPayment" glyphName="BELL" layoutX="11.0" layoutY="29.0" onMouseClicked="#alertPayment" size="1.6em" text="" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                             <effect>
+                                                <Lighting diffuseConstant="1.57" specularConstant="0.58" specularExponent="40.0" surfaceScale="2.76">
+                                                   <bumpInput>
+                                                      <Shadow />
+                                                   </bumpInput>
+                                                   <light>
+                                                      <Light.Distant />
+                                                   </light>
+                                                </Lighting>
+                                             </effect>
+                                             <fill>
+                                                <LinearGradient endX="1.0" endY="1.0">
+                                                   <stops>
+                                                      <Stop>
+                                                         <color>
+                                                            <Color red="1.0" />
+                                                         </color>
+                                                      </Stop>
+                                                      <Stop offset="1.0">
+                                                         <color>
+                                                            <Color red="0.9210526347160339" />
+                                                         </color>
+                                                      </Stop>
+                                                   </stops>
+                                                </LinearGradient>
+                                             </fill>
+                                          </FontAwesomeIcon>
+                                          <Label alignment="TOP_LEFT" contentDisplay="TOP" layoutX="35.0" layoutY="13.0" prefHeight="20.0" prefWidth="75.0" text="Alert Tenant" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="0.0">
+                                             <font>
+                                                <Font name="Gill Sans MT Bold" size="11.0" />
+                                             </font>
+                                             <textFill>
+                                                <LinearGradient endX="1.0" endY="1.0">
+                                                   <stops>
+                                                      <Stop>
+                                                         <color>
+                                                            <Color red="1.0" />
+                                                         </color>
+                                                      </Stop>
+                                                      <Stop offset="1.0">
+                                                         <color>
+                                                            <Color red="0.5921052694320679" green="0.2620614171028137" blue="0.12061403691768646" />
+                                                         </color>
+                                                      </Stop>
+                                                   </stops>
+                                                </LinearGradient>
+                                             </textFill>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                    <RadioButton fx:id="tableInvoice_paidRadio" layoutX="357.0" layoutY="14.0" mnemonicParsing="false" text="Paid" textFill="#60ab15" visible="false" AnchorPane.leftAnchor="480.0" AnchorPane.topAnchor="10.0">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </RadioButton>
+                                    <Button fx:id="tableInvoice_createNotice" alignment="CENTER" layoutX="430.0" layoutY="13.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="25.0" prefWidth="106.0" styleClass="refundBTN" stylesheets="@style.css" text="Notice" visible="false" AnchorPane.leftAnchor="360.0" AnchorPane.topAnchor="10.0">
+                                       <font>
+                                          <Font name="Gill Sans MT Bold" size="11.0" />
+                                       </font>
+                                       <textFill>
+                                          <LinearGradient endX="1.0" endY="1.0">
+                                             <stops>
+                                                <Stop>
+                                                   <color>
+                                                      <Color red="0.026133041828870773" green="0.0667184442281723" blue="0.5131579041481018" />
+                                                   </color>
+                                                </Stop>
+                                                <Stop offset="1.0">
+                                                   <color>
+                                                      <Color red="0.028813352808356285" green="0.18990619480609894" blue="0.5657894611358643" />
+                                                   </color>
+                                                </Stop>
+                                             </stops>
+                                          </LinearGradient>
+                                       </textFill>
+                                       <effect>
+                                          <Lighting diffuseConstant="1.39" specularConstant="0.71" specularExponent="31.95" surfaceScale="2.07">
+                                             <bumpInput>
+                                                <Shadow />
+                                             </bumpInput>
+                                             <light>
+                                                <Light.Distant />
+                                             </light>
+                                          </Lighting>
+                                       </effect>
+                                       <graphic>
+                                          <Label fx:id="notice_totalNotice" text="(0) " textFill="WHITE" />
+                                       </graphic>
+                                    </Button>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane fx:id="tableInvoice_noticeForm" layoutX="14.0" layoutY="14.0" prefHeight="455.0" prefWidth="400.0" stylesheets="@style.css" visible="false" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                 <styleClass>
+                                    <String fx:value="background-center" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                                 <children>
+                                    <AnchorPane fx:id="tableInvoice_alertPayment1" layoutX="248.0" layoutY="4.0" prefHeight="18.0" prefWidth="100.0" style="-fx-background-color: transparent;" AnchorPane.leftAnchor="250.0" AnchorPane.topAnchor="12.0" />
+                                    <Button fx:id="noticeForm_backBTN" layoutX="54.0" layoutY="18.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: linear-gradient(to bottom right, #ff5100, #ff0000 ); -fx-background-radius: 10; -fx-border-radius: 10;" text="BACK" textFill="WHITE" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                       <font>
+                                          <Font name="Tahoma Bold" size="15.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Button>
+                                    <Label alignment="CENTER" layoutX="270.0" layoutY="9.0" prefWidth="300.0" text="NOTICE   INVOICE" textFill="#eb0000" AnchorPane.leftAnchor="270.0" AnchorPane.rightAnchor="270.0" AnchorPane.topAnchor="10.0">
+                                       <font>
+                                          <Font name="Tahoma Bold" size="25.0" />
+                                       </font>
+                                    </Label>
+                                    <AnchorPane layoutX="320.0" layoutY="86.0" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: linear-gradient(to bottom right,  #02119b, #020079);;" styleClass="background-center" stylesheets="@style.css" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="120.0">
+                                       <children>
+                                          <RadioButton fx:id="notice_prePayment_radio" layoutX="23.0" layoutY="17.0" mnemonicParsing="false" onAction="#showRadioExplain" text="Prepayment" textFill="WHITE" AnchorPane.leftAnchor="20.0">
+                                             <font>
+                                                <Font name="Tahoma Bold" size="12.0" />
+                                             </font>
+                                             <toggleGroup>
+                                                <ToggleGroup fx:id="caseNotices" />
+                                             </toggleGroup>
+                                          </RadioButton>
+                                          <RadioButton fx:id="notice_extend_radio" layoutX="137.0" layoutY="17.0" mnemonicParsing="false" onAction="#showRadioExplain" text="Extend" textFill="WHITE" toggleGroup="$caseNotices" AnchorPane.leftAnchor="150.0">
+                                             <font>
+                                                <Font name="Tahoma Bold" size="12.0" />
+                                             </font>
+                                          </RadioButton>
+                                          <RadioButton fx:id="notice_others_radio" layoutX="279.0" layoutY="17.0" mnemonicParsing="false" onAction="#showRadioExplain" text="Others" textFill="WHITE" toggleGroup="$caseNotices" AnchorPane.leftAnchor="260.0">
+                                             <font>
+                                                <Font name="Tahoma Bold" size="12.0" />
+                                             </font>
+                                          </RadioButton>
+                                          <TextField fx:id="notice_searchCase" layoutX="565.0" layoutY="4.0" prefHeight="35.0" prefWidth="440.0" promptText="Search Case, Date ..." styleClass="textField" stylesheets="@style.css" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="8.0">
+                                             <font>
+                                                <Font name="Tahoma Bold" size="13.0" />
+                                             </font>
+                                          </TextField>
+                                          <FontAwesomeIcon fill="#ababab" glyphName="SEARCH" layoutX="791.0" layoutY="27.0" size="1.5EM" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="16.0" />
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane layoutX="250.0" layoutY="261.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="170.0">
+                                       <children>
+                                          <Label fx:id="notice_labelExplain" layoutX="112.0" layoutY="5.0" prefHeight="30.0" prefWidth="107.0" styleClass="label-explain" stylesheets="@style.css" text="*** Payment :  Pre_payment, this means when you pre receive an amount which on total price invoice's" textFill="#151665" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <font>
+                                                <Font name="Gill Sans MT Bold" size="12.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets left="10.0" right="5.0" />
+                                             </padding>
+                                          </Label>
+                                          <Label layoutX="59.0" layoutY="73.0" prefHeight="30.0" prefWidth="150.0" text="Amount Received :" textFill="#0d40b9" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="40.0">
+                                             <font>
+                                                <Font name="Tahoma Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="50.0" layoutY="117.0" prefHeight="30.0" prefWidth="150.0" text="Amount Remaining :" textFill="#0d40b9" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="125.0">
+                                             <font>
+                                                <Font name="Tahoma Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="36.0" layoutY="297.0" prefHeight="30.0" prefWidth="150.0" text="More Description :" textFill="#0d40b9" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="210.0">
+                                             <font>
+                                                <Font name="Tahoma Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="notice_receivedAmount" layoutX="178.0" layoutY="73.0" prefHeight="40.0" prefWidth="0.0" promptText="Your Amount Received" style="-fx-background-radius: 10; -fx-border-radius: 10;" styleClass="background-center" stylesheets="@style.css" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="460.0" AnchorPane.topAnchor="70.0">
+                                             <font>
+                                                <Font name="System Bold" size="16.0" />
+                                             </font>
+                                          </TextField>
+                                          <TextField fx:id="notice_remainingAmount" disable="true" layoutX="224.0" layoutY="113.0" prefHeight="40.0" prefWidth="0.0" promptText="Remaining Amount" style="-fx-background-radius: 10; -fx-border-radius: 10;" styleClass="background-center" stylesheets="@style.css" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="460.0" AnchorPane.topAnchor="155.0">
+                                             <font>
+                                                <Font name="System Bold" size="16.0" />
+                                             </font>
+                                          </TextField>
+                                          <Button fx:id="notice_createNotice" layoutX="20.0" layoutY="363.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="0.0" style="-fx-background-color: linear-gradient(to bottom right,  #02119b, #020079); -fx-background-radius: 10;" text="Create Notice" textFill="WHITE" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="460.0">
+                                             <font>
+                                                <Font name="Tahoma Bold" size="14.0" />
+                                             </font>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </Button>
+                                          <Button layoutX="178.0" layoutY="352.0" mnemonicParsing="false" onAction="#clearAllField" prefHeight="35.0" prefWidth="0.0" style="-fx-background-color: linear-gradient(to bottom right, #ff5100, #ff0000 ); -fx-background-radius: 10;" text="Clear All Fields" textFill="WHITE" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="460.0">
+                                             <font>
+                                                <Font name="Tahoma Bold" size="14.0" />
+                                             </font>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </Button>
+                                          <TextArea fx:id="notice_description" layoutX="125.0" layoutY="287.0" prefHeight="100.0" prefWidth="0.0" promptText="Some descrip about this case to remember" styleClass="background-center" stylesheets="@style.css" AnchorPane.bottomAnchor="130.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="460.0" AnchorPane.topAnchor="240.0">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </TextArea>
+                                          <Label fx:id="notice_strLength" layoutX="339.0" layoutY="316.0" opacity="0.61" text="120" AnchorPane.bottomAnchor="140.0" AnchorPane.rightAnchor="470.0" />
+                                          <ScrollPane layoutX="510.0" layoutY="70.0" prefHeight="200.0" prefWidth="450.0" stylesheets="@style.css" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="65.0">
+                                             <content>
+                                                <GridPane fx:id="notice_gridPaneNotices" prefHeight="0.0" prefWidth="0.0" style="-fx-background-color: transparent;">
+                                                   <columnConstraints>
+                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                   </columnConstraints>
+                                                </GridPane>
+                                             </content>
+                                          </ScrollPane>
+                                          <Label fx:id="notice_countChars" layoutX="324.0" layoutY="321.0" opacity="0.61" text="0 /" AnchorPane.bottomAnchor="140.0" AnchorPane.rightAnchor="490.0" />
+                                          <Label layoutX="465.0" layoutY="40.0" prefHeight="30.0" prefWidth="70.0" text="Processed:" textFill="#45b80f" AnchorPane.rightAnchor="190.0">
+                                             <font>
+                                                <Font name="Tahoma Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="545.0" layoutY="40.0" prefHeight="30.0" prefWidth="88.0" text="UnProcessed: " textFill="#ff3700" AnchorPane.rightAnchor="30.0">
+                                             <font>
+                                                <Font name="Tahoma Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="notice_processed" alignment="CENTER_RIGHT" layoutX="460.0" layoutY="40.0" prefHeight="30.0" prefWidth="37.0" text="- -" textFill="#45b80f" AnchorPane.rightAnchor="170.0">
+                                             <font>
+                                                <Font name="Tahoma Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="notice_unprocessed" alignment="CENTER_RIGHT" layoutX="660.0" layoutY="40.0" prefHeight="30.0" prefWidth="34.0" text="- -" textFill="#ff3700" AnchorPane.rightAnchor="0.0">
+                                             <font>
+                                                <Font name="Tahoma Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="390.0" layoutY="40.0" prefHeight="30.0" prefWidth="70.0" text="NOTICES:" textFill="#0227bc" AnchorPane.rightAnchor="380.0">
+                                             <font>
+                                                <Font name="Tahoma Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="notice_total" layoutX="460.0" layoutY="40.0" prefHeight="30.0" prefWidth="47.0" text="- -" textFill="#0227bc" AnchorPane.rightAnchor="330.0">
+                                             <font>
+                                                <Font name="Tahoma Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                    <Label layoutX="14.0" layoutY="107.0" prefHeight="20.0" prefWidth="202.0" style="-fx-background-radius: 10; -fx-border-radius: 10;" text="Select Case For Notice" textFill="#eb0000" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="90.0">
+                                       <font>
+                                          <Font name="Tahoma Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <AnchorPane layoutX="596.0" layoutY="10.0" prefHeight="100.0" prefWidth="250.0" styleClass="background-center" stylesheets="@style.css" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                       <children>
+                                          <Label layoutX="20.0" layoutY="15.0" prefHeight="25.0" prefWidth="36.0" text="ID :" textFill="#1d2879" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="5.0">
+                                             <font>
+                                                <Font name="Tahoma Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="notice_invoiceID" alignment="CENTER_RIGHT" layoutX="133.0" layoutY="16.0" prefHeight="25.0" prefWidth="194.0" text="- -" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="5.0">
+                                             <font>
+                                                <Font name="Tahoma Bold" size="15.0" />
+                                             </font>
+                                             <textFill>
+                                                <LinearGradient endX="1.0" endY="1.0">
+                                                   <stops>
+                                                      <Stop>
+                                                         <color>
+                                                            <Color red="0.11372549086809158" green="0.1568627506494522" blue="0.4745098054409027" />
+                                                         </color>
+                                                      </Stop>
+                                                      <Stop offset="1.0">
+                                                         <color>
+                                                            <Color blue="0.7236841917037964" />
+                                                         </color>
+                                                      </Stop>
+                                                   </stops>
+                                                </LinearGradient>
+                                             </textFill>
+                                             <padding>
+                                                <Insets right="5.0" />
+                                             </padding>
+                                          </Label>
+                                          <Label fx:id="notice_totalPrice" alignment="CENTER_RIGHT" layoutX="150.0" layoutY="44.0" prefHeight="20.0" prefWidth="100.0" text="- -" textFill="#ff3300" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="0.0">
+                                             <font>
+                                                <Font name="Gill Sans MT Bold" size="18.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets right="5.0" />
+                                             </padding>
+                                          </Label>
+                                          <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="60.0" text="TOTAL :" textFill="RED" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0">
+                                             <font>
+                                                <Font name="Tahoma Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Line endX="126.5" layoutX="125.0" layoutY="50.0" opacity="0.55" startX="-100.0" strokeWidth="0.5" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+                                             <stroke>
+                                                <LinearGradient endX="1.0" endY="1.0">
+                                                   <stops>
+                                                      <Stop>
+                                                         <color>
+                                                            <Color red="0.053230587393045425" green="0.03283382207155228" blue="0.6447368264198303" />
+                                                         </color>
+                                                      </Stop>
+                                                      <Stop offset="1.0">
+                                                         <color>
+                                                            <Color red="0.6388888955116272" green="0.6990740895271301" blue="1.0" />
+                                                         </color>
+                                                      </Stop>
+                                                   </stops>
+                                                </LinearGradient>
+                                             </stroke>
+                                          </Line>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                     </center>
+                  </BorderPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

@@ -1,0 +1,6 @@
+VBox:hover {
+    -fx-border-color: Black; /* Màu viền khi hover */
+    -fx-border-radius: 20;
+    -fx-border-width: 2;
+}
+

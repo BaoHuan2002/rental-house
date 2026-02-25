@@ -1,0 +1,2 @@
+INSERT INTO users (id, name, email, phone, password, bank_name, bank_number, bank_QR, membership_package, role, is_deleted)
+  VALUES ("Admin", "Admin", "admin@rentify.com", "0000000000", "$2a$10$yCRvvCJz9hoCr/EtHkHUOe7DzEtzkNAD52FlEv1ojptXqDJG.TF8K", null, null, null, 3, 1, 0);
