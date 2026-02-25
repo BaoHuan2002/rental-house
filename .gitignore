@@ -1,2 +1,7 @@
 target/
+.env
 remember.json
+*.log
+.idea/
+.vscode/
+*.iml
